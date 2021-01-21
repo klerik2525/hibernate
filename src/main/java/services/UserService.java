@@ -17,9 +17,7 @@ public class UserService {
         return usersDao.findById(id);
     }
 
-    public void saveUser(User user) {
-        usersDao.save(user);
-    }
+   public void saveUser(User user) {       usersDao.save(user);    }
 
     public void deleteUser(User user) {
         usersDao.delete(user);
@@ -39,5 +37,7 @@ public class UserService {
     public Auto findAutoById(int id) {
         return usersDao.findAutoById(id);
     }
+
+
 }
 

@@ -7,7 +7,7 @@ import org.hibernate.Transaction;
 import utils.HibernateSessionFactoryUtil;
 import java.util.List;
 
-public class UserDao {
+public class UserDao implements interfaceDao {
 
     public User findById(int id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, id);
@@ -44,7 +44,6 @@ public class UserDao {
         Transaction tx1 = session.beginTransaction();
         session.delete(user);
         tx1.commit();
-        //session.flush();
         session.close();
     }
 
@@ -57,4 +56,6 @@ public class UserDao {
                 .getSessionFactory().openSession().createQuery("From User").list();
         return users;
     }
+
+
 }
