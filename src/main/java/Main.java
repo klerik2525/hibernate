@@ -22,6 +22,6 @@ public class Main {
 
         //System.out.print(userService.findUser(81).getAutos() + user.getName());
 
-       userService.deleteOfId(87);
+       userService.deleteOfId(88);
     }
 }
