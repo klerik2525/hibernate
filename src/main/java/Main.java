@@ -1,13 +1,12 @@
-import models.Auto;
-import models.User;
 import services.UserService;
+
 import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
 
         UserService userService = new UserService();
-       User user = new User("Masha", 26);
+       /*User user = new User("Masha", 26);
         userService.saveUser(user);
         Auto ferrari = new Auto("Ferrari", "red");
         Auto ford = new Auto("Ford", "black");
@@ -18,11 +17,11 @@ public class Main {
         user.addAuto(bmw);
         ford.setUser(user);
         user.addAuto(ford);
-        userService.updateUser(user);
+        userService.updateUser(user);*/
 
 
-        System.out.print(userService.findUser(89).getAutos() + user.getName());
+        //System.out.print(userService.findUser(81).getAutos() + user.getName());
 
-       //userService.deleteOfId(89);
+       userService.deleteOfId(88);
     }
 }
