@@ -15,16 +15,19 @@ public class UserService {
 
     public User findUser(int id) {
         return usersDao.findById(id);
+
     }
 
-   public void saveUser(User user) {       usersDao.save(user);    }
+   public void saveUser(User user) { usersDao.save(user);    }
 
-    public void deleteUser(User user) {
-        usersDao.delete(user);
-    }
 
     public void deleteOfId(int id){
         usersDao.deleteId(id);}
+
+    public String findOfName(String name){
+        usersDao.findByName(name);
+        return name;
+    }
 
     public void updateUser(User user) {
         usersDao.update(user);

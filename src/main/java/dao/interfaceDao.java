@@ -7,10 +7,12 @@ import java.util.List;
 
 public interface interfaceDao {
 
-    public User findById(int id);
-    public void save(User user);
-    public void update(User user);
-    public void delete(User user);
-    public Auto findAutoById(int id);
-    public List<User> findAll();
+     User findById(int id);
+     void save(User user);
+     void update(User user);
+     Auto findAutoById(int id);
+     List<User> findAll();
+     User findByName(String name);
+
+
 }

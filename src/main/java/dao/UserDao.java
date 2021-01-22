@@ -4,13 +4,17 @@ import models.Auto;
 import models.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import utils.HibernateSessionFactoryUtil;
+
+import javax.persistence.Column;
 import java.util.List;
 
 public class UserDao implements interfaceDao {
 
     public User findById(int id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, id);
+
     }
 
     public void save(User user) {
@@ -29,13 +33,8 @@ public class UserDao implements interfaceDao {
         session.close();
     }
 
-    public void delete(User user) {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
-        session.delete(user);
-        tx1.commit();
-        session.close();
-    }
+
+
 
     public void deleteId(int id){
 
@@ -56,6 +55,17 @@ public class UserDao implements interfaceDao {
                 .getSessionFactory().openSession().createQuery("From User").list();
         return users;
     }
+
+    public User findByName(String name) {
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        Query query = session.createQuery("from User where name = :name");
+        query.setParameter("name", "Masha");
+        User user = (User) query.getSingleResult();
+        return user;
+
+    }
+
+
 
 
 }
