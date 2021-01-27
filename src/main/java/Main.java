@@ -29,7 +29,7 @@ public class Main {
 
        // System.out.println(userService.findOfName("Misha"));
        System.out.println(userService.findOfName("Pisha"));
-      // System.out.println( userService.CountUniqueName("Pasha"));
+       System.out.println( userService.CountUniqueName("Pasha"));
 
 
     }
