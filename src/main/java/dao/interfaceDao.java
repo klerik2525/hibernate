@@ -3,6 +3,7 @@ package dao;
 import models.Auto;
 import models.User;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface interfaceDao {
@@ -12,7 +13,7 @@ public interface interfaceDao {
      void update(User user);
      Auto findAutoById(int id);
      List<User> findAll();
-     User findByName(String name);
-
+     List<User> findByName(String name);
+     Collection<User> finduniqueName(String name);
 
 }

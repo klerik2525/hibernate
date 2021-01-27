@@ -4,6 +4,7 @@ import dao.UserDao;
 import models.Auto;
 import models.User;
 
+import java.util.Collection;
 import java.util.List;
 
 public class UserService {
@@ -24,8 +25,9 @@ public class UserService {
     public void deleteOfId(int id){
         usersDao.deleteId(id);}
 
-    public String findOfName(String name){
+    public Object findOfName(String name){
         usersDao.findByName(name);
+
         return name;
     }
 
@@ -40,7 +42,10 @@ public class UserService {
     public Auto findAutoById(int id) {
         return usersDao.findAutoById(id);
     }
+    public Collection<User> CountUniqueName(String name){
+        return usersDao.finduniqueName(name);
 
+    }
 
 }
 

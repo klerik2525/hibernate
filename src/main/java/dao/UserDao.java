@@ -7,10 +7,14 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import utils.HibernateSessionFactoryUtil;
 
-import javax.persistence.Column;
+import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 
 public class UserDao implements interfaceDao {
+
+
+
 
     public User findById(int id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, id);
@@ -56,16 +60,31 @@ public class UserDao implements interfaceDao {
         return users;
     }
 
-    public User findByName(String name) {
+    public List<User> findByName(String name) {
+
+Object name1 = null;
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Query query = session.createQuery("from User where name = :name");
-        query.setParameter("name", "Masha");
-        User user = (User) query.getSingleResult();
-        return user;
+        Query query = session.createQuery( " from User where name = :name" );
+        query.setParameter("name", name1).list();
+        List<User> users = (List<User>) query.getResultList();
+
+        return users;
 
     }
 
 
+
+    public Collection<User> finduniqueName(String name){
+        Object name1 = name;
+
+        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
+        String hql = "select count (name) "+"from User where name = :name";
+        Query query = session.createQuery(hql);
+        query.setParameter("name", name1).list();
+        List<User> users = (List<User>) query.getResultList();
+
+        return users;
+    }
 
 
 }
