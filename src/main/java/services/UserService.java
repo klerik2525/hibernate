@@ -33,7 +33,9 @@ public class UserService {
     public Auto findAutoById(int id) {
         return usersDao.findAutoById(id);
     }
-
+    public List<Auto> findAllAuto() {
+        return usersDao.findAllCars();
+    }
 
 }
 

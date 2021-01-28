@@ -70,4 +70,10 @@ public class UserDao implements interfaceDao {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Auto.class, id);
     }
 
+    public List<Auto> findAllCars() {
+        List<Auto> cars = (List<Auto>)  HibernateSessionFactoryUtil
+                .getSessionFactory().openSession().createQuery("From Auto").list();
+        return cars;
+    }
+
 }

@@ -22,10 +22,11 @@ public class Main {
         userService.updateUser(user);*/
 
 
-        //userService.deleteOfId(93);
-      //System.out.println(userService.findOfName("Pasha"));
-      //System.out.println(userService.CountUniqueName("Pasha"));
+      // userService.deleteOfId(93);
+      // System.out.println(userService.findOfName("Pasha"));
+      // System.out.println(userService.CountUniqueName("Pasha"));
       // System.out.println(userService.findAllUsers());
-        //System.out.print(userService.findUser(90));
+      // System.out.print(userService.findUser(90));
+       // System.out.print(userService.findAllAuto());
     }
 }
