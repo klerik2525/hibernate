@@ -2,8 +2,6 @@ package dao;
 
 import models.Auto;
 import models.User;
-
-import java.util.Collection;
 import java.util.List;
 
 public interface interfaceDao {

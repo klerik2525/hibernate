@@ -6,19 +6,9 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import utils.HibernateSessionFactoryUtil;
-
-import java.util.Collection;
 import java.util.List;
 
 public class UserDao implements interfaceDao {
-
-
-
-
-    public User findById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, id);
-
-    }
 
     public void save(User user) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
@@ -36,11 +26,7 @@ public class UserDao implements interfaceDao {
         session.close();
     }
 
-
-
-
     public void deleteId(int id){
-
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         User user = session.load(User.class, id);
         Transaction tx1 = session.beginTransaction();
@@ -49,19 +35,11 @@ public class UserDao implements interfaceDao {
         session.close();
     }
 
-    public Auto findAutoById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Auto.class, id);
-    }
-
-    public List<User> findAll() {
-        List<User> users = (List<User>)  HibernateSessionFactoryUtil
-                .getSessionFactory().openSession().createQuery("From User").list();
-        return users;
+    public User findById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(User.class, id);
     }
 
     public List<User> findByName(String name) {
-
-
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         String hql = "SELECT name"+ " From User where name = :name";
         Query query = session.createQuery(hql);
@@ -70,7 +48,11 @@ public class UserDao implements interfaceDao {
         return users;
     }
 
-
+    public List<User> findAll() {
+        List<User> users = (List<User>)  HibernateSessionFactoryUtil
+                .getSessionFactory().openSession().createQuery("From User").list();
+        return users;
+    }
 
     public List<User> finduniqueName(String name){
         Object name1 = name;
@@ -80,9 +62,12 @@ public class UserDao implements interfaceDao {
         Query query = session.createQuery(hql);
         query.setParameter("name", name1).list();
         List<User> users = (List<User>) query.getResultList();
-
         return users;
     }
 
+
+    public Auto findAutoById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Auto.class, id);
+    }
 
 }
