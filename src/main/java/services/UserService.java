@@ -25,10 +25,8 @@ public class UserService {
     public void deleteOfId(int id){
         usersDao.deleteId(id);}
 
-    public Object findOfName(String name){
-        usersDao.findByName(name);
-
-        return name;
+    public List<User>  findOfName(String name){
+        return usersDao.findByName(name);
     }
 
     public void updateUser(User user) {
@@ -42,10 +40,11 @@ public class UserService {
     public Auto findAutoById(int id) {
         return usersDao.findAutoById(id);
     }
-    public Collection<User> CountUniqueName(String name){
+    public List<User> CountUniqueName(String name){
         return usersDao.finduniqueName(name);
 
     }
+
 
 }
 

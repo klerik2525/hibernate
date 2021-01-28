@@ -9,7 +9,6 @@ import utils.HibernateSessionFactoryUtil;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
 
 public class UserDao implements interfaceDao {
 
@@ -62,19 +61,18 @@ public class UserDao implements interfaceDao {
 
     public List<User> findByName(String name) {
 
-        Object name1 = name;
+
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Query query = session.createQuery( " from User where name = :name" );
-        query.setParameter("name", name1).list();
+        String hql = "SELECT name"+ " From User where name = :name";
+        Query query = session.createQuery(hql);
+        query.setParameter("name", name).list();
         List<User> users = (List<User>) query.getResultList();
-
         return users;
-
     }
 
 
 
-    public Collection<User> finduniqueName(String name){
+    public List<User> finduniqueName(String name){
         Object name1 = name;
 
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();

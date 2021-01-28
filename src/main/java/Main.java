@@ -28,9 +28,9 @@ public class Main {
       // userService.deleteOfName("Masha");
 
        // System.out.println(userService.findOfName("Misha"));
-       System.out.println(userService.findOfName("Pisha"));
-       System.out.println( userService.CountUniqueName("Pasha"));
-
+       System.out.println(userService.findOfName("Pasha"));
+      System.out.println(userService.CountUniqueName("Pasha"));
+       // System.out.println(userService.findAllUsers());
 
     }
 }

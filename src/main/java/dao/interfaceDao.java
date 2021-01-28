@@ -14,6 +14,6 @@ public interface interfaceDao {
      Auto findAutoById(int id);
      List<User> findAll();
      List<User> findByName(String name);
-     Collection<User> finduniqueName(String name);
+     List<User> finduniqueName(String name);
 
 }
