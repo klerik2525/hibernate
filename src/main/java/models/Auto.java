@@ -13,7 +13,7 @@ public class Auto {
     @Column (name = "model")
     private String model;
 
-    //можно не указывать Column name, если оно совпадает с названием столбца в таблице
+
     private String color;
 
 

@@ -3,6 +3,7 @@ package services;
 import dao.UserDao;
 import models.Auto;
 import models.User;
+
 import java.util.List;
 
 public class UserService {
@@ -33,9 +34,11 @@ public class UserService {
     public Auto findAutoById(int id) {
         return usersDao.findAutoById(id);
     }
-    public List<Auto> findAllAuto() {
-        return usersDao.findAllCars();
+    public List<Auto> findAllAuto() {    return usersDao.findAllCars();
     }
+ //   public String usersAuto(){  usersDao.findUsersAuto();
+
+  //  }
 
 }
 

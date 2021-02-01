@@ -2,6 +2,7 @@ package dao;
 
 import models.Auto;
 import models.User;
+
 import java.util.List;
 
 public interface interfaceDao {
@@ -14,4 +15,5 @@ public interface interfaceDao {
      List<User> findByName(String name);
      List<User> finduniqueName(String name);
      List<Auto> findAllCars();
+     //List<Object[]> findUsersAuto();
 }
