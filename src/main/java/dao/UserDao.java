@@ -2,12 +2,15 @@ package dao;
 
 import models.Auto;
 import models.User;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.postgresql.core.NativeQuery;
 import utils.HibernateSessionFactoryUtil;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserDao implements interfaceDao {
 
@@ -124,11 +127,10 @@ public class UserDao implements interfaceDao {
     public Query findUsersAuto() {
 
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx = session.beginTransaction();
         String sql = "\"SELECT p.id, p.name , ps.id, ps.model\" +\n" +
                 "                        \"FROM users \" +\n" +
                 "                        \"INNER JOIN autos ps ON ps.user_id = p.id\"";
-        Query query = session.createSQLQuery(sql)
+        Query query = (Query) session.createSQLQuery(sql)
                 .addEntity("id", User.class)
                 .addEntity("name", User.class)
                 .addEntity("id", Auto.class)
