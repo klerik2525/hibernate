@@ -36,9 +36,7 @@ public class UserService {
     }
     public List<Auto> findAllAuto() {    return usersDao.findAllCars();
     }
- //   public String usersAuto(){  usersDao.findUsersAuto();
 
-  //  }
 
 }
 

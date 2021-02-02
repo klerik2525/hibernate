@@ -9,6 +9,7 @@ import org.hibernate.query.Query;
 import org.postgresql.core.NativeQuery;
 import utils.HibernateSessionFactoryUtil;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -70,45 +71,6 @@ public class UserDao implements interfaceDao {
         return users;
     }
 
-   /* public NativeQuery findUsersAuto(User user) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession()
-                .createSQLQuery("SELECT p.id, p.name , ps.id, ps.model" +
-                "FROM users " +
-                "INNER JOIN autos ps ON ps.user_id = p.id");
-
-       /* String sql = "SELECT p.id, p.name , ps.id, ps.model" +
-                "FROM users " +
-                "INNER JOIN autos ps ON ps.user_id = p.id";
-        Query query = (Query) session.createSQLQuery(sql);
-
-        tx1.commit();
-        session.close();*/
-
-
-    // }
-
-
-     /*   Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        String hql = "select a.id, a.name, b.model "+"from User as a  join Auto as b where name = :name  ";
-        Query query = session.createQuery(hql);
-        query.setParameter("name", name).list();
-        List<User> users = (List<User>) query.getResultList();
-        return users;*/
-
-
-       /* Object name1 = name;
-
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        String hql = "SELECT a.id, a.name   from User as a where name = :name " ;
-
-        Query query = session.createQuery(hql);
-
-        query.setParameter("name", name1 ).list();
-
-        List<User> users = (List<User>) query.getResultList();
-
-
-        return users;*/
 
 
     public Auto findAutoById(int id) {
@@ -124,20 +86,23 @@ public class UserDao implements interfaceDao {
 
 
 
-    public Query findUsersAuto() {
+    /*public Query findUsersAuto() {
 
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         String sql = "\"SELECT p.id, p.name , ps.id, ps.model\" +\n" +
                 "                        \"FROM users \" +\n" +
                 "                        \"INNER JOIN autos ps ON ps.user_id = p.id\"";
-        Query query = (Query) session.createSQLQuery(sql)
-                .addEntity("id", User.class)
-                .addEntity("name", User.class)
-                .addEntity("id", Auto.class)
-                .addEntity("model", Auto.class);
+        Query query = (Query) session.createSQLQuery(sql);
+        List l = query.list();
+        Iterator it = l.iterator();
+        while (it.hasNext()){
+            Object rows[] = (Object[])it.next();
+            System.out.println(rows[0]+ "--"+rows[1]+ "--" +rows[3]+ "--" );
+        }*/
 
 
-        return query;
-    }
+
+
+
 
 }

@@ -26,8 +26,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="c7d44769-92d3-4f41-86fa-0e1d1d606c8d">
-        <schema name="pg_catalog" object-types="function" />
-        <schema name="public" object-types="constraint, index, table, function, sequence, view, column, dataset trigger" />
+        <schema name="public" object-types="table, index, view, constraint, column, sequence, dataset trigger, function" />
       </connection>
     </loaded-nodes>
   </component>
@@ -38,8 +37,8 @@
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="c7d44769-92d3-4f41-86fa-0e1d1d606c8d" object-ref="schemas/public/tables/autos" />
       <object connection-id="c7d44769-92d3-4f41-86fa-0e1d1d606c8d" object-ref="schemas/public/tables/users" />
+      <object connection-id="c7d44769-92d3-4f41-86fa-0e1d1d606c8d" object-ref="schemas/public/tables/autos" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">

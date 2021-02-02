@@ -8,6 +8,7 @@ import utils.HibernateSessionFactoryUtil;
 
 import java.sql.SQLException;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class Main {
@@ -27,7 +28,7 @@ public class Main {
         user.addAuto(ford);
         userService.updateUser(user);*/
 
-UserDao userDao = new UserDao();
+
 
       // userService.deleteOfId(93);
       //System.out.println(userService.findOfName("Pasha"));
@@ -35,9 +36,6 @@ UserDao userDao = new UserDao();
       // System.out.println(userService.findAllUsers());
       // System.out.print(userService.findUser(90));
        // System.out.print(userService.findAllAuto());
-       //
-       //
-        System.out.print(userDao.findUsersAuto());
 
 
 
