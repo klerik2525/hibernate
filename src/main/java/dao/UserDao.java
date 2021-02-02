@@ -72,7 +72,6 @@ public class UserDao implements interfaceDao {
     }
 
 
-
     public Auto findAutoById(int id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Auto.class, id);
     }
@@ -84,25 +83,20 @@ public class UserDao implements interfaceDao {
     }
 
 
-
-
-    /*public Query findUsersAuto() {
+    public void  findUsersAuto() {
 
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        String sql = "\"SELECT p.id, p.name , ps.id, ps.model\" +\n" +
-                "                        \"FROM users \" +\n" +
-                "                        \"INNER JOIN autos ps ON ps.user_id = p.id\"";
+        String sql = "SELECT p.id, p.name , ps.user_id, ps.model " + "FROM users p " +
+                "INNER JOIN autos ps ON ps.User_id = p.id";
         Query query = (Query) session.createSQLQuery(sql);
         List l = query.list();
         Iterator it = l.iterator();
-        while (it.hasNext()){
-            Object rows[] = (Object[])it.next();
-            System.out.println(rows[0]+ "--"+rows[1]+ "--" +rows[3]+ "--" );
-        }*/
+        while (it.hasNext()) {
+            Object rows[] = (Object[]) it.next();
+           System.out.println(rows[0] + "--" + rows[1] + rows[2]+"--"+ rows[3]);
+
+        }
 
 
-
-
-
-
+    }
 }

@@ -9,8 +9,8 @@ public class Auto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn (name = "model")
+
+    @Column (name = "model")
     private String model;
 
 
@@ -55,8 +55,8 @@ public class Auto {
         this.user = user;
     }
 
- /*   @Override
+ @Override
     public String toString() {
         return color + " " + model;
-    }*/
+    }
 }

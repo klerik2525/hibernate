@@ -2,6 +2,7 @@ package dao;
 
 import models.Auto;
 import models.User;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -15,5 +16,5 @@ public interface interfaceDao {
      List<User> findByName(String name);
      List<User> finduniqueName(String name);
      List<Auto> findAllCars();
-
+     void  findUsersAuto();
 }
